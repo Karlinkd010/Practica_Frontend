@@ -1,0 +1,30 @@
+<div class="login-wrapper" fxLayout="row" fxLayoutAlign="center center">
+  <mat-card class="box">
+    <mat-card-header>
+      <mat-card-title>Actualizar Registro</mat-card-title>
+      <br>
+
+    </mat-card-header>
+
+    <form class="example-form" [formGroup]="form" (ngSubmit)="editar_persona()">
+
+      <mat-card-content>
+    
+          <input matInput formControlName="personaId" style="display: none" >
+        
+        <mat-form-field class="example-full-width">
+          <input matInput formControlName="nombreCompleto" placeholder="Nombre Completo">
+        </mat-form-field>
+
+        <mat-form-field class="example-full-width">
+          <input matInput type="email" email="true" formControlName="correo" placeholder="Correo Electronico">
+        </mat-form-field>
+
+
+      </mat-card-content>
+
+      <button mat-stroked-button color="accent"  [disabled]="this.form.invalid"class="btn-block">Actualizar</button>
+
+    </form>
+  </mat-card>
+</div>

@@ -1,0 +1,32 @@
+
+<div class="login-wrapper" fxLayout="row" fxLayoutAlign="center center">
+  <mat-card class="box">
+    <mat-card-header>
+      <mat-card-title>Crea una cuenta</mat-card-title>
+      <br>
+
+    </mat-card-header>
+
+    <form class="example-form" [formGroup]="form" (ngSubmit)="guardarUser()">
+    <mat-card-content>
+       <mat-form-field class="example-full-width">
+          <input matInput formControlName="NombreCompleto" placeholder="Nombre Completo">
+        </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+          <input matInput formControlName="Correo" placeholder="Correo Electronico">
+    </mat-form-field>
+
+    <input matInput formControlName="Salt" style="display: none">
+
+    <mat-form-field class="example-full-width">
+          <input matInput type="password" formControlName="Password" placeholder="Contraseña">
+    </mat-form-field>  
+      <input matInput formControlName="Estatus" style="display: none"> 
+   </mat-card-content>
+
+      <button mat-stroked-button color="accent" class="btn-block">Register</button>
+
+    </form>
+  </mat-card>
+</div>

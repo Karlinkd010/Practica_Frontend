@@ -1,0 +1,49 @@
+<br>
+<br>
+<br>
+<br>
+
+ <a button mat-raised-button color="primary" routerLink="formulario"><mat-icon>person_add</mat-icon> Agregar </a>
+
+<table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+  <ng-container matColumnDef="personaId">
+    <th mat-header-cell *matHeaderCellDef> No. </th>
+    <td mat-cell *matCellDef="let element"> {{element.personaId}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="nombreCompleto">
+    <th mat-header-cell *matHeaderCellDef> Nombre </th>
+    <td mat-cell *matCellDef="let element"> {{element.nombreCompleto}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="correo">
+    <th mat-header-cell *matHeaderCellDef> Correo </th>
+    <td mat-cell *matCellDef="let element"> {{element.correo}} </td>
+  </ng-container>
+  <ng-container matColumnDef="Editar">
+    <th mat-header-cell *matHeaderCellDef> Actualizar </th>
+    <td mat-cell *matCellDef="let element"> 
+    <a (click)="editar_persona(element.personaId,element.nombreCompleto,element.correo)" button mat-icon-button color="accent">
+    <mat-icon>update</mat-icon>
+    </a>
+     </td>
+  </ng-container>
+  <ng-container matColumnDef="Eliminar">
+    <th mat-header-cell *matHeaderCellDef> Eliminar </th>
+    <td mat-cell *matCellDef="let element"> 
+
+     <a (click)="eliminar_persona(element.personaId)" button mat-icon-button color="warn" >
+    <mat-icon>delete</mat-icon></a>
+
+
+    </td>
+  </ng-container>
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+</table>
+
+
+
+
